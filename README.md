@@ -1,13 +1,15 @@
-Author: Tan Nguyen
-Description: The project is answer for the coding test: https://github.com/Skedulo/backend-tech-test
-## Setting up:  
+##Author: 
+    Tan Nguyen
+##Description: 
+    The project is answer for the coding test: https://github.com/Skedulo/backend-tech-test
+##Setting up:  
     - Install NodeJS 14 or above
     - Access project root directory
     - Run "npm install"
     - Run "build.sh" to build as JS files into /build directory (But I already did so you can skip this step)
     - Run command "run.sh [full_path_to_file]"1
 
-## The solution
+##The solution
 
     #1 Sort the performance list as a priority queue with these conditions as the same order: start time, priority, performance length
 
@@ -20,15 +22,15 @@ Description: The project is answer for the coding test: https://github.com/Skedu
                 . If the current performance start before the last one finish: set the current performance start time as the last one finish time and put it back to the performance list then sort the performance list
 
     #3 After the while loop exits, clean up the result list to match the format of the expected result, then save it as json.
-## Programming Language
+##Programming Language
     I chose Typescript on NodeJS as the main language for this project for 4 main reasons: 
         + It fits one of many language that required for the position in Skedulo, 
         + It's currently my main programming language,
         + It's quite easy to build and run on any environment,
         + Easy to control syntax and exception.
-## Testing Strategy
+##Testing Strategy
     About unit test, I just used straight out Jest and create only one test file to test 3 main function is, input, sort and find the optimal performance.
-## Feedback question
+##Feedback question
     The timezone-specified case in the verifier has the same time zone throughout the whole file which make it not so different with the non-timezone-specified ones.
     The verifier needs some effort to run correctly, at least for me because I ran it on a window machine.
 
