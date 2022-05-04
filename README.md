@@ -7,7 +7,7 @@ The project is answer for the coding test: https://github.com/Skedulo/backend-te
     - Access project root directory
     - Run "npm install"
     - Run "build.sh" to build as JS files into /build directory (But I already did so you can skip this step)
-    - Run command "run.sh [full_path_to_file]"1
+    - Run command "run.sh [full_path_to_file]".
 
 # The solution
 1. Sort the performance list as a priority queue with these conditions as the same order: start time, priority, performance length
