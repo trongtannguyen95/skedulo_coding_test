@@ -27,7 +27,7 @@ The project is answer for the coding test: https://github.com/Skedulo/backend-te
     + It's quite easy to build and run on any environment,
     + Easy to control syntax and exception.
 # Testing Strategy
-About unit test, I just used straight out Jest and create only one test file to test 3 main function is, input, sort and find the optimal performance.
+* About unit test, I just used straight out Jest and create only one test file to test 3 main function is, input, sort and find the optimal performance.
 # Feedback question
 1. The timezone-specified case in the verifier has the same time zone throughout the whole file which make it not so different with the non-timezone-specified ones.
 2. The verifier needs some effort to run correctly, at least for me because I ran it on a window machine.
