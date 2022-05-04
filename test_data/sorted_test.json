@@ -3,21 +3,18 @@
         "band": "Red Hot Chili Peppers",
         "start": "2018-05-25T00:00:00Z",
         "finish": "2018-05-25T00:35:00Z",
-        "length": 2100,
         "priority": 9
     },
     {
         "band": "Soundgarden",
         "start": "2018-05-25T00:00:00Z",
         "finish": "2018-05-25T00:45:00Z",
-        "length": 2700,
         "priority": 5
     },
     {
         "band": "Pearl Jam",
         "start": "2018-05-25T00:01:15Z",
         "finish": "2018-05-25T00:28:30Z",
-        "length": 1635,
         "priority": 10
     }
 ]

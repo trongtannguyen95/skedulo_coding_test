@@ -2,21 +2,25 @@
     {
         "start": "2018-05-25T00:00:00Z",
         "finish": "2018-05-25T00:01:15Z",
-        "band": "Red Hot Chili Peppers"
+        "band": "Red Hot Chili Peppers",
+        "priority": 9
     },
     {
         "start": "2018-05-25T00:01:15Z",
         "finish": "2018-05-25T00:28:30Z",
-        "band": "Pearl Jam"
+        "band": "Pearl Jam",
+        "priority": 10
     },
     {
         "start": "2018-05-25T00:28:30Z",
         "finish": "2018-05-25T00:35:00Z",
-        "band": "Red Hot Chili Peppers"
+        "band": "Red Hot Chili Peppers",
+        "priority": 9
     },
     {
-        "start": "2018-05-25T00:35:00.000Z",
+        "start": "2018-05-25T00:35:00Z",
         "finish": "2018-05-25T00:45:00Z",
-        "band": "Soundgarden"
+        "band": "Soundgarden",
+        "priority": 5
     }
 ]

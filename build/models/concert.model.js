@@ -11,15 +11,17 @@ var Concert = /** @class */ (function () {
         this.sort = function () {
             _this.performances.sort(function (a, b) {
                 var aStart = new Date(a.start).getTime();
+                var aFinish = new Date(a.finish).getTime();
                 var bStart = new Date(b.start).getTime();
+                var bFinish = new Date(b.finish).getTime();
                 if (aStart !== bStart) {
                     return aStart - bStart;
                 }
                 else if (a.priority !== b.priority) {
                     return b.priority - a.priority;
                 }
-                else if (a.length !== b.length) {
-                    return a.length - b.length;
+                else if ((aFinish - aStart) !== (bFinish - bStart)) {
+                    return (aFinish - aStart) - (bFinish - bStart);
                 }
                 return 0;
             });
@@ -43,7 +45,6 @@ var Concert = /** @class */ (function () {
                     if (current.priority > last.priority) { //if the current performance has higher priority than the last one, add the current one into the output
                         if (currentStart.getTime() < lastFinish.getTime()) { //if the current one start before the last one finish, cut the last one's start time into a new performance and put it back to the list
                             last.start = current.finish;
-                            last.length -= (lastFinish.getTime() - currentStart.getTime()) / 1000;
                             result[result.length - 1].finish = current.start;
                             _this.performances.push(last);
                             _this.sort();
@@ -53,7 +54,7 @@ var Concert = /** @class */ (function () {
                     else if (currentFinish.getTime() > lastFinish.getTime()) { //if the current performance has lower than or equal priority the last one and it finish after the last one
                         if (currentStart.getTime() < lastFinish.getTime()) { //if the current one start before the last one finish, recalculate the current one start time and put it back to the list
                             current.start = last.finish;
-                            current.length -= (lastFinish.getTime() - currentStart.getTime()) / 1000;
+                            currentStart = new Date(current.start);
                             _this.performances.push(current);
                             _this.sort();
                         }
@@ -71,9 +72,6 @@ var Concert = /** @class */ (function () {
         this.name = name;
         this.performances = performances.map(function (p) {
             var performance = new performance_model_1.default(p);
-            var start = new Date(performance.start);
-            var finish = new Date(performance.finish);
-            performance.length = (finish.getTime() - start.getTime()) / 1000; //calculating length of performance by seconds
             return performance;
         });
     }

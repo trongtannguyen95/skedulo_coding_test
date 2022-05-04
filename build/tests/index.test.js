@@ -39,12 +39,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var concert_model_1 = __importDefault(require("../src/models/concert.model"));
+var concert_model_1 = __importDefault(require("../models/concert.model"));
 var fs_1 = __importDefault(require("fs"));
 var path_1 = __importDefault(require("path"));
-var data = JSON.parse(fs_1.default.readFileSync(path_1.default.join(__dirname, 'test.json')).toString());
-var sortedData = JSON.parse(fs_1.default.readFileSync(path_1.default.join(__dirname, 'sorted_test.json')).toString());
-var optimizedData = JSON.parse(fs_1.default.readFileSync(path_1.default.join(__dirname, 'test.optimal.json')).toString());
+var data = JSON.parse(fs_1.default.readFileSync(path_1.default.join(__dirname, "..", "..", 'test_data', 'test.json')).toString());
+var sortedData = JSON.parse(fs_1.default.readFileSync(path_1.default.join(__dirname, "..", "..", 'test_data', 'sorted_test.json')).toString());
+var optimizedData = JSON.parse(fs_1.default.readFileSync(path_1.default.join(__dirname, "..", "..", 'test_data', 'test.optimal.json')).toString());
 describe('testing concert model file', function () {
     it("create & sort performances successfully", function () { return __awaiter(void 0, void 0, void 0, function () {
         var testConcert;
@@ -64,7 +64,7 @@ describe('testing concert model file', function () {
         return __generator(this, function (_a) {
             testConcert = new concert_model_1.default({ name: 'Test concert', performances: data });
             testConcert.sort();
-            expect(JSON.parse(JSON.stringify(testConcert.findBestSchedule()))).toStrictEqual(optimizedData);
+            expect(JSON.parse(JSON.stringify(testConcert.findBestSchedule()))).toEqual(optimizedData);
             return [2 /*return*/];
         });
     }); });
